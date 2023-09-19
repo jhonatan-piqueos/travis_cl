@@ -1,9 +1,9 @@
-const express = require('express');
+econst express = require('express');
 const app = express();
 const puerto = 3000;
 
 app.get('/', (req, res) => {
-  res.send('<h1>¡Hola Mundo! amo a magiory <3 </h1>');
+  res.send('<h1>¡Hola Mundo! amo a magiory por siempre y para siempre <3 </h1>');
 });
 
 app.listen(puerto, () => {
