@@ -1,11 +1,18 @@
-language: node_js
-node_js:
-  - 14 # Puedes especificar la versión de Node.js que deseas utilizar
-
-# Instala dependencias antes de ejecutar las pruebas
-install:
-  - npm install
-
-# Comando para ejecutar las pruebas
-script:
-  - npm test
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run Tests
+          command: npm test
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
